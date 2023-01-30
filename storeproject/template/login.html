@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block content %}
+<h3 style="text-align:center">LOGIN</h3><br>
+<form method="post">
+    {% csrf_token %}
+    <center>
+    <label>Username  :</label>
+
+        <input type="text" name="username" placeholder="username"><br><br>
+     <label>password  :</label>
+        <input type="password" name="password" placeholder="password"><br><br>
+<!--     <label>confirm password  :</label>-->
+<!--        <input type="password" name="cpassword" placeholder="confirm password"><br><br>-->
+       <input type="submit"><br><br>
+        <p>Please <a href="{% url 'register' %}">click here to Register</a> for new users </p>
+        </center>
+</form>
+{% for msg in messages %}
+   {{msg}}
+ {% endfor %}
+{% endblock %}

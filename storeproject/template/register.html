@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block content %}
+<h3 style="text-align:center">REGISTER</h3><br>
+<form method="post" action="">
+    {% csrf_token %}
+    <center>
+    <label>Username  :</label>
+
+        <input type="text" name="username" placeholder="username"><br><br>
+     <label>password  :</label>
+        <input type="password" name="password" placeholder="password"><br><br>
+     <label>confirm password  :</label>
+        <input type="password" name="cpassword" placeholder="confirm password"><br><br>
+       <input type="submit"><br><br>
+        </center>
+</form>
+{% for msg in messages %}
+   {{msg}}
+ {% endfor %}
+
+{% endblock %}

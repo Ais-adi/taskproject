@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+ <div class="container">
+        {% block content %}
+         <div class="container">
+<center>
+            <img src="{% static 'img/clg store.jpg' %}" width="75%" height="400px" border="5px" alt="image">
+</center>
+         </div>
+     <br>
+     <div class="container">
+         <h2><center>About Us</center></h2><br>
+         <p>College store fulfilling college supplies, study material and uniform related requirements of students and colleges. College Shop is currently expanding its operations pan-India with a thrust on providing study materials online and reaching wider audiences.
+         The College has a book-cum-stationary store functioning within the campus. Students get all the text books and other related books from the college store.</p>
+     </div>
+     <center><a class="btn btn-info" href="{% url 'login' %}">Click Here to Login</a></center>
+
+
+ </div>
+        {% endblock %}
+
+

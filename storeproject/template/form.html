@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+        <center><h2>Form</h2><br></center>
+<form method="post" id="personForm" data-course-url="{% url 'ajax_load_courses' %}" class="contact" >
+          {% csrf_token %}
+       <div class="mb-3">
+<!--       {{ form.as_p }}-->
+            <table class="tableedit">
+               {{ form.as_table }}
+<!--        {{ form1.as_table }}-->
+
+
+    </table>
+           </div>
+<br>
+        <input type="submit" class="btn btn-success">
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+
+
+</form>
+{% for msg in messages %}
+   {{msg}}
+ {% endfor %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+       $("#id_department").change(function () {
+        const url = $("#personForm").attr("data-course-url");
+        const departmentId = $(this).val();
+
+        $.ajax({
+            url: url,
+            data: {
+                'department_id': departmentId
+            },
+            success: function (data) {
+<!--            console.log(data)-->
+                $("#id_courses").html(data);
+            }
+        });
+
+    });
+
+</script>
+
+
+
+{% endblock %}

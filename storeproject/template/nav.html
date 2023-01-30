@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'login' %}">LOGIN </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">REGISTER</a>
+      </li>
+      <li class="nav-item dropdown {% if 'storeapp' in request.path %}active {% endif %}">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           DEPARTMENTS
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Physics">Physics</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Chemistry">Chemistry</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Mathematics">Mathematics</a></li>
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a></li>
+
+
+          </ul>
+        </li>
+
+    </ul>
+
+  </div>
+</nav>

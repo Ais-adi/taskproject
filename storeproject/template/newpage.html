@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block content %}
+<h3 style="text-align:center">Hello users...you have successfullly logged in</h3><br>
+<h4 style="text-align:center">Please <a class="btn btn-info" href="{% url 'person_add' %}">Click Here </a> to continue </h4>
+</h4>
+{% endblock %}
